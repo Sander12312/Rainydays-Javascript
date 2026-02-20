@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rainydays | Cartpage</title>
+    <link rel="stylesheet" href="../styles/rainydays2.css">
+    <link rel="stylesheet" href="../styles/cartpage2.css">
+     <link rel="icon" href="../photos/RainyDays_Logo.png">
+</head>
+<script type="module" src="../js/checkout.js"></script>
+<body>
+    <!--infobar-->
+    <div class="info-bar">
+        <span class="information"><img src="../icons/checkmark.png" alt="confirmation on information" class="checkmark">Free shipping</span>
+         <span class="information"><img src="../icons/checkmark.png" alt="confirmation on information" class="checkmark">Guarantees</span>
+          <span class="information"><img src="../icons/checkmark.png" alt="confimration on information" class="checkmark">Pricematch</span>
+    </div>
+    <!--header-->
+    <header>
+        <div class="logo">
+            <a href="../index.html"><img src="../photos/RainyDays_Logo.png" alt="Logo of rainydays" class="logo"></a>
+        </div>
+                    <form action="search">
+        <div class="search">
+            <span class="search-icon"> <img src="../icons/search-interface-symbol.png" alt="search interface symbol" class="search-icon"></span>
+       <input type="search" placeholder="Search" class="search-input">
+        </div>
+    </form>
+        <div class="icons">
+            <img src="../icons/search-interface-symbol.png" alt="search interface symbol" id="Search-icon-header">
+            <img src="../icons/user.png" alt="user icon">
+            <img src="../icons/shopping-cart.png" alt="shopping cart icon">
+            <img src="../icons/heart.png" alt="heart icon">
+        </div>
+
+    </header>
+    <!--navigation-->
+    <nav class="main-nav">
+    <button><a href="">Male</a></button> 
+   <button><a href="../index.html">Female</a></button> 
+   <button><a href="../index.html">News</a></button> 
+   <button><a href="../index.html">Outlet</a></button> 
+   <button><a href="../index.html">Sales</a></button> 
+    </nav>
+
+<!--cartpage-->
+<div class="cartpage-heading"><h1 class= "cart">Cart</h1></div>
+<main class="cart-container">
+    <section class="cart-item">
+<div class="image">
+        <img src="../photos/RainyDays_Jacket1.jpg" alt="rainydays logo" class="image">
+</div>
+    <div class="cartpage-info">
+        <h3>Jacket1</h3>
+        <ul class="list-payment">
+            <li>Waterproof</li>
+            <li>Windproof</li>
+            <li>3-layers</li>
+        </ul>
+        <h3>500$</h3>
+    <label class="amount-options">
+        <select name="number" id="number">
+            <option value="number">1</option>
+            <option value="number">2</option>
+            <option value="number">3</option>
+        </select>
+    </label>
+    <button class="remove-items">X Remove</button>
+    </div>
+    </section>
+    <!--payment-->
+    <div class="payment">
+        <h3 class="summary">Summary</h3>
+        <div class="list">
+            <ul class="info">
+                <li>Items</li>
+                <li>Shipping</li>
+                <li>Vat 20%</li>
+                <li>Total</li>
+            </ul>
+            <ul class="price">
+                <li>500$</li>
+                <li>120$</li>
+                <li>100$</li>
+                <li>620$</li>
+            </ul>
+        </div>
+
+    <span class="we-support">We support:</span>
+    <img src="#" alt="Visa" class="visa">
+    <img src="#" alt="Vipps" class="vipps">
+    <img src="#" alt="paypal" class="paypal">
+    <img src="#" alt="Klarna" class="klarna">
+       <a href="confirmation/index.html" class="payment-button" id="pay"><button class="payment-button">Pay</button></a>
+</div>
+</main>
+ 
+    <!--footer-->
+<footer class="footer">
+    <div class="footer-logo">
+        <img src="../photos/RainyDays_Logo.png" alt="rainydays logo" class="footer-logo">
+      </div>
+    <div class="footer-connect">
+        <p>Contact</p>
+        <p>Phone number</p>
+        <p>Email</p>
+    </div>
+     <div class="footer-services">
+        <p>Questions</p>
+        <p>Common questions</p>
+        <p>Chat</p>
+    </div>
+     <div class="footer-social">
+        <p>Social Media</p>
+        <p>Instagram</p>
+        <p>Facebook</p>
+    </div>
+</footer>
+</body>
+</html>

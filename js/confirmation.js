@@ -1,0 +1,1 @@
+localStorage.removeItem("rainydays_cart");

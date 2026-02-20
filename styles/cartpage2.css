@@ -1,0 +1,245 @@
+/*cartpage*/
+.cartpage-heading h1{
+    display: flex;
+    justify-content: center;
+    color: orange;
+}
+/*cards*/
+.cart-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 5vw;
+    padding: 10vw;
+    align-items: center;
+    justify-content: center;
+}
+.image{
+width: 150px;
+height: 200px;
+border-radius: 8px;
+}
+.cart-item{
+    display: flex;
+    background-color: rgba(100, 164, 247, 0.308);
+    border-radius: 8px;
+    padding: 5vw;
+    align-content: center;
+}
+.list{
+    display: flex;
+    flex-direction: row;
+    margin-top: 5px;
+}
+.info{
+    margin-left: 8vw;
+    font-size: large;
+}
+.price{
+    margin-left: 10vw;
+    font-size: large;
+}
+.remove-items{
+    background-color: rgb(184, 147, 147);
+    border-radius: 5px;
+    width: 10vw;
+    height: 7vw;
+    text-align: center;
+    overflow: hidden;
+    justify-content: center;
+    font-size: x-small
+}
+/*paymentcards*/
+a .payment-button {
+height: 5vw;
+width:25vw;
+border-radius: 10px;
+position: relative;
+margin-top: 5px;
+margin-left: 20px;
+background-color: orange;
+}
+.payment{
+    background-color: rgba(143, 159, 172, 0.555);
+    padding: 5vw;
+    border-radius: 8px;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 45px;
+    align-items: center;
+    height: 80vw;
+}
+h3{
+    margin-bottom: 20px;
+}
+.we-support{
+    margin-top: 2px;
+    margin-bottom: 3px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    font-size: x-large;
+    text-align: center;
+}
+.vipps img, .klarna img, .vipps img, .paypal img{
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: xx-small;
+}
+.list-items{
+    margin-bottom: 2px;
+}
+.summary{
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.cartpage-info{
+    padding-left: 10px;
+    margin-bottom: 10px;
+}
+.list-payment{
+    margin-bottom: 10px;
+}
+li{
+    margin: 10px;
+}
+
+
+@media (min-width:600px){
+    .image{
+width: 180px;
+height: 210px;
+border-radius: 8px;
+}
+    .payment{
+        padding: 5px;
+        height: 50vw;
+    }
+    .cart-item{
+        margin-top: -6vw;
+        height: 40vw;
+        width: 55vw;
+    }
+    .remove-items{
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 80px;
+        height: 20px;
+        margin-left: 30px;
+    }
+    .info{
+        font-size: x-large;
+    }
+    h3{
+        margin-left: 30px;
+    }
+    .list-payment{
+        margin-left: 30px;
+    }
+    .summary{
+        font-size: x-large;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+    }
+    .amount-options{
+        margin-left: 30px;
+    }
+    .list{
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin-top: -20px;
+    }
+   a .payment-button{
+        width: 25vw;
+    }
+    .info{
+        margin-left: 5vw;
+        font-size: larger;
+    }
+    .price{
+        margin-right: 3vw;
+        font-size: x-large;
+    }
+    #pay{
+        margin-left: 4vw;
+        margin-top: 5px;
+        width: 20vw;
+        display: flex;
+        text-align: center;
+        justify-content: center;
+    }
+    .vipps img, .klarna img, .vipps img, .paypal img{
+        margin-left: 20px;
+        padding-left: 10px;
+        margin-top: 10px;
+    }
+}
+@media (min-width:1000px){
+    .image{
+width: 210px;
+height:300px;
+border-radius: 8px;
+}
+   .cart-container{
+        display: flex;
+        flex-direction: row;
+        padding-top: 1vw;
+    }
+    .price{
+        padding-right: 3vw;
+        padding-left: 3vw;
+    }
+    .info{
+        font-size: x-large;
+    }
+    .payment{
+        height: 40vw;
+        margin-top: 0;
+    }
+    .cart-item{
+        height: 35vw;
+    }
+    .payment{
+        height: 35vw;
+    }
+    #pay{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        width: 30vw;
+        margin-top: 3vw;
+        margin-left: 2vw;
+
+    }
+
+}
+@media (min-width:1500px){
+   .cart-container{
+        display: flex;
+        flex-direction: row;
+        padding-top: 3vw;
+    }
+    .image{
+width: 300px;
+height: 400px;
+    }
+    .cartpage-info{
+        margin-left: 80px;
+        margin-top: -20px;
+    }
+    h3{
+        font-size: xx-large;
+        margin-top: 30px;
+    }
+    .list-payment{
+        font-size: x-large;
+        margin-top: 50px;
+    }
+
+}

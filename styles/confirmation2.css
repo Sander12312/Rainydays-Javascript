@@ -1,0 +1,27 @@
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vw;
+    margin-bottom: 20vw;
+}
+h1{
+    text-align: center;
+    margin-bottom: 5vw;
+}
+/*confirmation*/
+.confirmation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5vw;
+    width: 30vw;
+}
+.confirmation-text{
+    margin-top: 5vw;
+    text-align: center;
+    margin-bottom: 5vw;
+    font-size: larger;
+    font-weight: bolder;
+}

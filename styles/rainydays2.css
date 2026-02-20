@@ -1,0 +1,616 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body{
+    background-color: #D3E3F2
+}
+/*infobar*/
+.info-bar{
+    background-color: rgb(248, 243, 237);
+    gap: 0;
+    top: 0;
+    display: flex;
+    gap: 20px;
+    justify-content:space-between;
+    border-bottom: 1px solid;
+    padding: 10px;
+    text-align: center;
+    padding-left: 5vw;
+    padding-right: 5vw;
+}
+.checkmark{
+    width: 2vw;
+    height: 2vw;
+}
+.information{
+    font-size: 2vw;
+}
+/*Header*/
+header{
+    background-color: #D9D1D1;
+    display: flex;
+     justify-items: center;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 5px;
+flex-wrap: wrap;
+background-color: rgba(102, 117, 117, 0.801);
+}
+.logo{
+display: flex;
+align-items: center;
+gap: 8px;
+}
+.logo img{
+    width: 100px;
+    height: 80px;
+}
+ .icons img{
+    width: 20px;
+    margin-left: 15px;
+}
+/*navigation*/
+nav{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0;
+
+}
+button {
+    background-color: rgb(72, 138, 138);
+    margin: 0;
+    margin-top: 0px;
+    flex-direction: row;
+    width: 20%;
+    justify-items: center;
+    border-radius: 0;
+    border:none;
+    text-decoration: none;
+    font-weight: bolder;
+}
+a{
+    color: #D9D1D1;
+    width: 20%;
+    text-decoration: none;
+}
+form{
+    display: none;
+}
+/*hero*/
+aside{
+    margin-top: 0vw;
+    background-image: url(../photos/kalen-emsley-UqyHjOgYxYY-unsplash\ \(1\)\ compressed1\ .jpg);
+    height: 100px
+}
+h1{
+    color: #ffffff;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.cta{
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    margin-top: 15px;
+    width: 30vw;
+    height: 6vw;
+    font-weight: bold;
+    text-align: center;
+    border: rgb(153, 130, 26) solid;
+}
+/*main content*/
+h2{
+    background-color: rgba(255, 228, 196, 0);
+}
+/*cards*/
+.card-container{
+    display: block;
+    justify-items: center;
+    background-color: rgba(250, 235, 215, 0.356);
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom:0;
+    text-align: left;
+    border: 1px;
+}
+.card{
+    background-color: rgba(83, 100, 95, 0.425);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-radius: 5px;
+    border-style: blue;
+    box-shadow: rgba(110, 89, 89, 0.192)
+}
+.jacket{
+    width: 60vw;
+    height: 70vw;
+    border-radius: 5px;
+    padding:5px;
+}
+.card-content{
+    justify-items: center;
+    text-align: left;
+    row-gap: 1px;
+}
+.card-button{   
+background-color: rgb(206, 161, 16);
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 10px;
+border-radius: 5px;
+margin-top: 2px;
+width: 20vw;
+height: 5vw;
+font-weight: bolder;
+}
+ul{
+    list-style:none;
+    font-size: 4vw;
+    font-weight: lighter;
+}
+.price{
+    font-weight: bolder;
+}
+
+/*footer*/
+footer{
+    background-color: #F7F9F1;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    padding: 15px;
+    font-size: 10px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+footer{
+    flex-direction: row;
+    justify-content: space-around;
+    text-align: left;
+}
+.footer-logo{
+    width: 10vh;
+}
+
+/*responsive media*/
+
+@media (min-width:600px) {
+/*infobar*/
+    .checkmark{
+        width: 0.99vw;
+        height: 0.99vw;
+    }
+    .information{
+        font-size: 0.9vw;
+    }
+    .info-bar{
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+    /*header*/
+        header{
+        height: 20vw;
+        border-radius: 5px;
+    }
+    .logo{
+        justify-items: left;
+        width: 30vw;
+        height: 10vw;
+        padding-left: 10px;
+    }
+    /*searchfield*/
+    .search{
+        display: flex;
+        justify-items: center;
+        height: 5vw;
+        align-items:center;
+        padding: 15px;
+        border-radius: 20px;
+        height: max-content;
+        background-color: #ffffff;
+        width: 250px;
+        max-width: 600px;
+    }
+    .search-input{
+    font-size: 1vw;
+    font-family:sans-serif;
+    color: #ffffff;
+    margin-left: 0px;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    cursor: pointer;
+}
+.search-icon{
+    width: 20px;
+    height: 20px;
+}
+    a{
+    display: flex;
+justify-items: center;
+justify-content: center;
+text-align: center;
+align-content: center;
+text-decoration: none;
+padding-left: 3VW;
+    }
+  button{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+    justify-items: center;
+    width: 10vw;
+    margin-left: 4%;
+  }
+  .icons img a{
+    width: 10px;
+  }
+form{
+display: contents;
+width: 50px;
+}
+
+/*hero*/
+aside{
+    margin-top: 3vw;
+    background-image: url(../photos/kalen-emsley-UqyHjOgYxYY-unsplash.jpg);
+    height: 150px
+}
+h1{
+    color: #ffffff;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.cta{
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2vw;
+    margin-top: 15px;
+    width: 15vw;
+    height: 5vw;
+    font-weight: bold;
+    text-align: center;
+    border: rgb(153, 130, 26) solid;
+    justify-content: center;
+    justify-items: center;
+}
+h2{
+    background-color: rgba(255, 228, 196, 0);
+}
+/*cards*/
+.card-container{
+display: flex;
+width: 100vw;
+height:70vw;
+margin-bottom: 10px;
+}
+.card{
+margin-right: 40px;
+align-items: center;
+margin-bottom: 10px;
+margin-left: 20px;
+padding-bottom: 5px;
+}
+.card-button{
+    font-size: 3vw;
+    border-radius: 10px;
+    margin-top: 40px;
+    align-items: center;
+}
+.jacket{
+width: 25vw;
+height: 30vw;
+}
+ul{
+    font-size: 2vw;
+}
+.price{
+    font-size: 3vw;
+}
+h3{
+    font-size: 2.5vw;
+}
+}
+/*responsive media*/
+@media (min-width:1000px) {
+    /*infobar*/
+    .checkmark{
+        width: 0.99vw;
+        height: 0.99vw;
+    }
+    .information{
+        font-size: 0.9vw;
+    }
+    .info-bar{
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+    /*header*/
+        header{
+        height: 10vw;
+        border-radius: 5px;
+        width:100%;
+        border-top: 10px;
+    }
+    .logo{
+        justify-items: left;
+        width: 10vw;
+        height: 10vw;
+    }
+    /*searchfield*/
+    .search{
+        display: flex;
+        justify-items: center;
+        width: 20vw;
+        height: 5vw;
+    }
+      .search-icon{
+    width: 2vw;
+    height: 2vw;
+  }
+  .search{
+        display: flex;
+        align-items:center;
+        padding: 15px;
+        border-radius: 20px;
+        height: max-content;
+        background-color: #ffffff;
+        width: 100vw;
+        max-width: 400px;
+    }
+.search-icon{
+    width: 20px;
+    height: 20px;
+}
+.search-input{
+    font-size: 1vw;
+    font-family:sans-serif;
+    color: #ffffff;
+    margin-left: 0px;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    cursor: pointer;
+    width: 100vw;
+}
+
+    a{
+    display: flex;
+justify-items: center;
+justify-content: center;
+text-align: center;
+align-content: center;
+text-decoration: none;
+padding-left: 3VW;
+    }
+
+  button{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 5px;
+    margin-top: 40px;
+    text-align: center;
+    justify-items: center;
+    width: 15vw;
+    margin-left: 4%;
+    margin-bottom: 2vw;
+  }
+  .icons img{
+    width: 60px;
+    margin-right: 10px;
+} 
+form{
+display: flex;
+justify-content: center;
+}
+/*hero*/
+aside{
+    margin-top: 1vw;
+    background-image: url(../photos/kalen-emsley-UqyHjOgYxYY-unsplash.jpg);
+    height: 150px
+}
+h1{
+    color: #ffffff;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.cta{
+    border-radius: 20px;
+    margin-left: 10px;
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    margin-top: 15px;
+    width: 16vw;
+    height: 5vw;
+    font-weight: bold;
+    text-align: center;
+    border: rgb(153, 130, 26) solid;
+    justify-content: center;
+    justify-items: center;
+}
+/*cards*/
+.card-container{
+    display: flex;
+margin-bottom: 10px;
+}
+.card-content{
+margin-top: 20px;
+}
+}
+@media (min-width:1500px) {
+    /*infobar*/
+    .checkmark{
+        width: 0.99vw;
+        height: 0.99vw;
+    }
+    .information{
+        font-size: 0.9vw;
+    }
+    .info-bar{
+        padding-left: 20vw;
+        padding-right: 20vw;
+    }
+    /*header*/
+        header{
+        height: 10vw;
+    }
+    header{
+    border-radius: 5px;
+    width:100%;
+    border-top: 10px;
+}
+    .logo{
+        justify-items: left;
+        width: 10vw;
+        height: 10vw;
+    }
+    /*searchfield*/
+    .search{
+        display: flex;
+        justify-items: center;
+        width: 20vw;
+        height: 5vw;
+    }
+  .search-icon{
+    width: 2vw;
+    height: 2vw;
+  }
+  .search-icon{
+    width: 20px;
+    height: 20px;
+}
+.search-input{
+    font-size: 1vw;
+    font-family:sans-serif;
+    color: #ffffff;
+    margin-left: 0px;
+    outline: none;
+    border: none;
+    background: transparent;
+    flex: 1;
+    cursor: pointer;
+    width: 100vw;
+}
+.search{
+        display: flex;
+        align-items:center;
+        padding: 15px;
+        border-radius: 20px;
+        height: max-content;
+        background-color: #ffffff;
+        width: 100vw;
+        max-width: 400px;
+    }
+  button{
+    display: flex;
+    font-size: 20px;
+    justify-content: space-between;
+    padding: 5px;
+    margin: 1px;
+    border-radius: 5px;
+    margin-top: 40px;
+    text-align: center;
+    justify-items: center;
+    width: 15vw;
+    margin-left: 4%;
+    margin-bottom: 2vw;
+  }
+      a{
+    display: flex;
+justify-items: center;
+justify-content: center;
+text-align: center;
+align-content: center;
+text-decoration: none;
+padding-left: 3VW;
+    }
+  .icons img{
+    width: 60px;
+    margin-right: 10px;
+} 
+form{
+display: flex;
+justify-content: center;
+}
+/*Hero*/
+aside{
+    margin-top: 1vw;
+    background-image: url(../photos/kalen-emsley-UqyHjOgYxYY-unsplash.jpg);
+    height: 500px
+}
+h1{
+    font-size: 10vw;
+    color: #ffffff;
+    margin-left: 10px;
+    padding-top: 10px;
+    font-weight: bold;
+}
+.cta{
+    border-radius: 20px;
+    margin-left: 40px;
+    background-color: orange;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3vw;
+    margin-top: 15px;
+    width: 30vw;
+    height: 5vw;
+    font-weight: bold;
+    text-align: center;
+    border: rgb(153, 130, 26) solid;
+    justify-content: center;
+    justify-items: center;
+}
+/*cards*/
+h2{
+    font-size: 5vw;
+    padding-left: 5vw;
+}
+.card-container{
+height: 60vw;
+margin-bottom: 10px;
+}
+.jacket{
+    width: 20vw;
+}
+.card{
+margin-left:5vw;
+}
+h3{
+    font-size: 4vw;
+}
+ul{
+font-family: 2vw;
+}
+.price{
+    margin-top: 15px;
+}
+.card-button{
+width: 15vw;
+}
+}

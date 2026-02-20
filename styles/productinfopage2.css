@@ -1,0 +1,158 @@
+/*productinfopage*/
+
+.productinfopage{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4vw;
+    padding: 5vw;
+flex-direction: column;
+
+}
+.productinfo-image img{
+    width: 50vw;
+    border: 2px solid;
+    height: 60vw;
+    margin-left: 10vw;
+}
+.productinfo-heading{
+    background-color:rgba(0, 0, 0, 0);
+    margin-left: 10vw;
+}
+h2{
+    margin-bottom: 3vw;
+}
+/*information*/
+.information{
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+}
+.productinfo{
+    max-width: 50vw;
+    max-height: 200px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10vw;
+    overflow: hidden;
+    margin-bottom: 3vw;
+}
+/*labels*/
+.color-options{
+margin-top: 5px;
+height: 10vw;
+width: 40vw;
+font-size: 4vw;
+}
+.size-options{
+margin-bottom: 10px;
+border-radius: 3px;
+color: cornflowerblue;
+}
+
+.amount-options{
+    margin-top: 4vw;
+}
+/*buttons*/
+.buttons{
+    display: flex;
+ margin-bottom: 20vw;
+ height: 15vw;
+ border-radius: 5px;
+ margin-top: 5vw;
+}
+.add{
+background-color: orange;
+border-radius: 20px;
+ width: 23vw;
+  font-size: 4vw;
+  text-align: center;
+}
+.cart{
+border-radius: 20px;
+ width: 23vw;
+  font-size: 4vw;
+  margin-left: 2vw;
+   height: 15vw;
+}
+
+/*responsive media*/
+@media (min-width:600px){
+    .productinfo-image img{
+        margin-left: 2vw;
+        width: 30vw;
+        height: 40vw;
+    }
+.productinfopage{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4vw;
+    padding: 5vw;
+    flex-direction: row;
+}
+.all-info{
+margin-left: -7vw;
+max-width: 400px;
+}
+.color-options{
+font-size: medium;
+}
+.cart{
+display: flex;
+align-items: center;
+justify-content: center;
+text-overflow: hidden;
+font-size: x-large;
+width: 170px;
+height: 50px;
+}
+.add{
+display: flex;
+align-items: center;
+justify-content: center;
+padding:5px;
+text-overflow: hidden;
+font-size: x-large;
+padding-left: 5vw;
+padding-right: 5vw;
+width: 250px;
+height: 50px;
+}}
+
+@media (min-width:1000px){
+.productinfopage{
+    margin-left: -350px;
+    margin-top: -30px;
+}
+.all-info{
+    margin-left: -8vw;
+}
+/*labels*/
+.color-options{
+    margin-top: 5px;
+    margin-bottom: -50px;
+}
+.buttons{
+    margin-top: -20px;
+}
+.cart{
+width: 250px;
+height: 50px;
+margin-top: 3vw;
+}
+.add{
+    width: 250px;
+    height: 50px;
+}
+}
+@media (min-width:1500px){
+    .productinfo{
+        max-width: 1500px;
+    }
+    h2{
+        font-size: medium;
+        max-width: auto;
+      padding: 0
+    }
+}

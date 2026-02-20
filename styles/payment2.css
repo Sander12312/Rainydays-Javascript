@@ -1,0 +1,92 @@
+.your-details-section, .delivering-section, .card-info-section{
+    margin-left: 2vw;
+    margin-top: 5vw;
+    margin-bottom: 10vw;
+}
+div{
+    display: block;
+}
+a{
+    text-align: center;
+}
+/*buttons*/
+ .confirm-and-pay {
+    margin-left: 5vw;
+    margin-top: 10vw;
+    background-color: orange;
+    width: 20vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-bottom: 10vw;
+    color: black;
+}
+.payment-card{
+    margin-top: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+background-color: cadetblue;
+padding: 20px;
+}
+
+@media(min-width:1000px){
+    .your-details-section, .delivering-section, .card-info-section{
+}
+.box, .rainydays, h1{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+.confirm-and-pay {
+    margin-left: 40vw;
+    margin-top: 10vw;
+    background-color: orange;
+    width: 20vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.your-details-section{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    gap: 4vw;
+}
+.card-info-section{
+    display: flex;
+    flex-direction: column;
+    width: 20vw;
+    gap: 4vw;
+    position: absolute;
+    top: 120px;
+    left: 500px;
+}
+input, select{
+    width: 20vw;
+    height: 3vw;
+}
+}
+@media(min-width:1500px){
+    .card-info-section{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left:700px;
+        top: 270px;
+    }
+}
+@media(min-width:2000px){
+    .card-info-section{
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        left:900px;
+        top: 370px;
+        font-size: larger;
+    }
+}
