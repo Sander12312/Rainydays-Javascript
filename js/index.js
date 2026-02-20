@@ -1,65 +1,63 @@
-const BASE_URL = "https://v2.api.noroff.dev/rainy-days";
-const CART_KEY = "rainydays_cart_v1";
+'use strict';
+const apiCart = "rainydays_cart_v1";
 
-const container = document.querySelector(".card-container");
-const searchInput = document.querySelector(".search-input");
-const nav = document.querySelector(".main-nav");
-const heading = document.querySelector("main h2");
-
+//---State---
 let allProducts = [];
 let currentGender = "all";
-let currentSearch = "";
 let currentTag = "all";
 let currentLabel = "Bestsellers!";
 
-//cart
+//---DOM---
+const container = document.querySelector(".card-container") ;
+const mainNav = document.querySelector(".main-nav");
+const heading = document.querySelector("main h2");
 
+
+//---functions---
+//--- The Cart---
 function getCart() {
-  const raw = localStorage.getItem(CART_KEY);
-  return raw ? JSON.parse(raw) : [];
+  const storedCart = localStorage.getItem(apiKey) ;
+  return storedCart ? JSON.parse(storedCart) : [];
 }
 
 function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  localStorage.setItem(apiCart, JSON.stringify(cart));
 }
 
 function addToCart(product) {
   const cart = getCart();
   const existing = cart.find(item => item.id === product.id);
-  const price = product.discountedPrice || product.price;
-
+  const price = Math.round(product.price);
   if (existing) {
     existing.quantity += 1;
   } else {
     cart.push({
       id: product.id,
       title: product.title,
-      price: price,
+      price: Math.round(price),
       image: product.image?.url || "",
       quantity: 1
     });
   }
-
   saveCart(cart);
 }
-
 function showLoading() {
-  container.innerHTML = "<p>Loading products...</p>";
+  container.innerHTML = "Loading products..." ;
 }
 
 function showError(message) {
-  container.innerHTML = `<p>Error: ${message}</p>`;
+  container.innerHTML = `Error: ${message}`;
 }
 
-function renderProducts(list) {
+//--- Product cards---
+function makeProductsCard(list) {
   container.innerHTML = "";
 
   list.forEach(product => {
-    const price = product.discountedPrice || product.price;
-
+    const price = product.price;
     container.innerHTML += `
       <div class="card">
-        <a href="/product/index.html?id=${product.id}" class="jacket">
+        <a href="product/index.html?id=${product.id}" class="jacket">
           <img src="${product.image?.url || ""}" alt="${product.title}" class="jacket">
         </a>
         <div class="card-content">
@@ -69,78 +67,73 @@ function renderProducts(list) {
         </div>
       </div>
     `;
-  });
+  }) ;
 
+//---Event listeners---
+//--- Add to cart button---
   document.querySelectorAll(".card-button").forEach(btn => {
     btn.addEventListener("click", () => {
-      const product = allProducts.find(p => p.id === btn.dataset.id);
+      const product = allProducts.find(product => product.id === btn.dataset.id);
       addToCart(product);
-      btn.textContent = "Added!";
-      setTimeout(() => btn.textContent = "Buy now", 800);
+      cardButton.textContent = "Added!" ;
+      cardButton.style.backgroundColor = "green";
     });
   });
 }
+
+//---initial loading---
+//--- filter products by gender---
+function applyFilters() {
+  let ProductFilter = [...allProducts] ;
+  if (currentGender !== "all") {
+    ProductFilter = ProductFilter.filter((product) => (product.gender || "").toLowerCase() === currentGender);
+  }
+  updateHeading();
+  makeProductsCard(ProductFilter);
+}
+//--- Uppdating the header
 function updateHeading() {
   if (!heading) return;
   heading.textContent = currentLabel;
 }
-function applyFilters() {
-  let list = [...allProducts];
-  if (currentGender !== "all") {
-    list = list.filter((p) => (p.gender || "").toLowerCase() === currentGender);
-  }
-  if (currentTag !== "all") {
-    list = list.filter((p) => Array.isArray(p.tags) && p.tags.includes(currentTag));
-  }
-  if (currentSearch.trim()) {
-    const s = currentSearch.trim().toLowerCase();
-    list = list.filter((p) => (p.title || "").toLowerCase().includes(s));
-  }
 
-  updateHeading();
-  renderProducts(list);
-}
+//--- Main navigation---
+if (mainNav) {
+  mainNav.addEventListener("click", (event) => {
+    const button = event.target.closest("button");
+    if (!button) return;
 
-async function fetchProducts() {
-  showLoading();
-
-  try {
-    const res = await fetch(BASE_URL);
-    const json = await res.json();
-    allProducts = json.data;
-    applyFilters();
-  } catch (error) {
-    showError(error.message);
-  }
-}
-
-if (nav) {
-  nav.addEventListener("click", (e) => {
-    const link = e.target.closest("a");
-    if (!link) return;
-
-    const txt = link.textContent.trim().toLowerCase();
-    e.preventDefault();
-    if (txt === "male" || txt === "female") {
-      currentGender = txt;
+    const buttonText = button.textContent.trim().toLowerCase();
+    event.preventDefault();
+    if (buttonText === "male" || buttonText === "female" ) {
+      currentGender = buttonText;
       currentTag = "all";
-      currentLabel = txt === "male" ? "Male jackets" : "Female jackets";
+      currentLabel = buttonText === "male" ? "Male jackets" : "Female jackets";
       applyFilters();
       return;
     }
-    if (txt === "outlet" || txt === "sales" || txt === "news") {
-      currentGender = "all";
-      currentTag = txt; 
-      currentLabel = txt.charAt(0).toUpperCase() + txt.slice(1);
-      applyFilters();
-      return;
-    }
-
     currentGender = "all";
     currentTag = "all";
     currentLabel = "Bestsellers!";
     applyFilters();
   });
+}
+
+//--- getting the products from the json file---
+const apiUrl = "https://v2.api.noroff.dev/rainy-days";
+async function fetchProducts() {
+  showLoading();
+  try {
+    const response = await fetch(apiUrl) ;
+    if (!response.ok) {
+      throw new Error("response is not okay!"); 
+    }
+    const data = await response.json();
+    allProducts = data.data;
+    applyFilters();
+  } catch (error) {
+    showError(`failed to fetch the data`, error);
+  }
 }
 
 fetchProducts();

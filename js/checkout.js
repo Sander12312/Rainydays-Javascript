@@ -1,29 +1,31 @@
-const CART_KEY = "rainydays_cart_v1";
+'use strict';
+const apiCart = "rainydays_cart_v1";
 const container = document.querySelector(".cart-container");
 
+//---Functions---
+//---cart---
 function getCart() {
-  const raw = localStorage.getItem(CART_KEY);
-  return raw ? JSON.parse(raw) : [];
+  const storedCart = localStorage.getItem(apiCart
+  );
+  return storedCart ? JSON.parse(storedCart) : [];
 }
 
 function saveCart(cart) {
-  localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  localStorage.setItem(apiCart, JSON.stringify(cart)) ;
 }
 
-function renderCart() {
+function makeCart() {
   const cart = getCart();
   container.innerHTML = "";
-
   if (cart.length === 0) {
-    container.innerHTML = "<p>Your cart is empty.</p>";
-    return;
+    container.innerHTML = "<p>Your cart is empty. Please add some products</p>";
+    return ;
   }
-
-  let total = 0;
-
+  let totalPrice = 0;
   cart.forEach(item => {
-    total += item.price * item.quantity;
+    totalPrice += item.price * item.quantity;
 
+//---the productcard---
     container.innerHTML += `
       <section class="cart-item" data-id="${item.id}">
         <div class="image">
@@ -34,8 +36,8 @@ function renderCart() {
           <h3>${item.price} NOK</h3>
 
           <select class="qty">
-            ${[1,2,3,4,5].map(n =>
-              `<option value="${n}" ${n === item.quantity ? "selected" : ""}>${n}</option>`
+            ${[1,2,3,4,5].map(number =>
+              `<option value="${number}" ${number === item.quantity ? "selected" : ""}>${number}</option>`
             ).join("")}
           </select>
 
@@ -44,35 +46,27 @@ function renderCart() {
       </section>
     `;
   });
-
+//---payment container ---
   container.innerHTML += `
     <div class="payment">
       <h3>Summary</h3>
-      <p>Total: ${total} NOK</p>
+      <p>Total: ${totalPrice.toFixed(2)} NOK</p>
       <a href="/checkout/confirmation/index.html">
         <button class="payment-button">Pay</button>
       </a>
     </div>
   `;
 
+//---event listeners---
+
+//--- remove itemss---
   container.querySelectorAll(".remove-items").forEach(btn => {
     btn.addEventListener("click", () => {
-      const id = btn.closest(".cart-item").dataset.id;
+      const id = btn.closest(".cart-item").dataset.id ;
       saveCart(getCart().filter(item => item.id !== id));
-      renderCart();
-    });
-  });
-
-  container.querySelectorAll(".qty").forEach(select => {
-    select.addEventListener("change", e => {
-      const id = e.target.closest(".cart-item").dataset.id;
-      const cart = getCart();
-      const item = cart.find(i => i.id === id);
-      item.quantity = Number(e.target.value);
-      saveCart(cart);
-      renderCart();
+      makeCart();
     });
   });
 }
-
-renderCart();
+//---initial loading---
+makeCart() ;
